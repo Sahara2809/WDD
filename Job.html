@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Job Application Form</title>
+</head>
+<body bgcolor="Lavender">
+<center>
+<h1><font color="DarkRed">ONLINE JOB APPLICATION</font></h1>
+<hr width="80%">
+<form>
+<table border="1" cellpadding="8" cellspacing="0" bgcolor="White" width="80%">
+<tr bgcolor="Pink">
+<th colspan="4">Applicant Details</th>
+</tr>
+<tr>
+<td>Applicant Name</td>
+<td><input type="text" id="name"></td>
+<td>Email ID</td>
+<td><input type="email" id="email"></td>
+</tr>
+<tr>
+<td>Mobile Number</td>
+<td><input type="tel" id="mobile"></td>
+<td>Date of Birth</td>
+<td><input type="date" id="dob"></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female
+<input type="radio" name="gender">Other
+</td>
+<td>Qualification</td>
+<td>
+<select id="qualification">
+<option>B.Sc</option>
+<option>BCA</option>
+<option>B.Tech</option>
+<option>MCA</option>
+<option>M.Sc</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>Skills</td>
+<td colspan="3">
+<input type="checkbox">HTML
+<input type="checkbox">CSS
+<input type="checkbox">JavaScript
+<input type="checkbox">Python
+</td>
+</tr>
+<tr>
+<td>Experience</td>
+<td><input type="number" id="experience"></td>
+<td>Upload Resume</td>
+<td><input type="file"></td>
+</tr>
+<tr>
+<td>Why Hire You?</td>
+<td colspan="3">
+<textarea id="reason" rows="4" cols="55"></textarea>
+</td>
+</tr>
+<tr bgcolor="Pink">
+<td colspan="4" align="center">
+<input type="button" value="Apply Now" onclick="applyJob()">
+<input type="reset" value="Clear">
+</td>
+</tr>
+</table>
+</form>
+</center>
+<hr>
+<script>
+function applyJob()
+{
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var exp=document.getElementById("experience").value;
+var qualification=document.getElementById("qualification").value;
+if(name=="" || email=="" || exp=="")
+{
+alert("Please fill all the required fields.");
+return;
+}
+var result=confirm("Do you want to submit your application?");
+if(result==true)
+{
+alert(
+"Application Submitted Successfully!\n\n"+
+"Name : "+name+
+"\nEmail : "+email+
+"\nQualification : "+qualification+
+"\nExperience : "+exp+" Years"
+);
+}
+else
+{
+alert("Application Cancelled.");
+}
+}
+</script>
+</body>
+</html>
